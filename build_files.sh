@@ -1,3 +1,6 @@
 # build_files.sh
-pip install -r requirements.txt
-python3.9 manage.py collectstatic
+echo "BUILD START"
+apt-get update && apt-get install -y postgresql libpq-dev
+python3.9 -m pip install -r requirements.txt
+python manage.py collectstatic --noinput --clear
+echo "BUILD END"
