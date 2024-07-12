@@ -11,9 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
-from decouple import config
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +25,7 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 SECRET_KEY = '#vw(03o=(9kbvg!&2d5i!2$_58x@_-3l4wujpow6(ym37jxnza'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -85,9 +82,11 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(config('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-
 
 
 # Password validation
@@ -130,7 +129,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS=[STATIC_DIR,]
 
-MEDIA_ROOT=os.path.join(BASE_DIR,'staticfiles_build','static')
+MEDIA_ROOT=os.path.join(BASE_DIR,'static')
 
 
 
@@ -149,4 +148,3 @@ EMAIL_HOST_PASSWORD = 'xyz' # host email password required
 # otherwise you will get SMTPAuthenticationError at /contactus
 # this process is required because google blocks apps authentication by default
 EMAIL_RECEIVING_USER = ['to@gmail.com'] # email on which you will receive messages sent from website
-DATABASES['default'] = dj_database_url.config()
