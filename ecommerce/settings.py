@@ -27,7 +27,8 @@ SECRET_KEY = '#vw(03o=(9kbvg!&2d5i!2$_58x@_-3l4wujpow6(ym37jxnza'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ecommerce-iggbedhzl-ankit-kumars-projects-7ec7e5cd.vercel.app']
+ALLOWED_HOSTS = ['ecommerce-iggbedhzl-ankit-kumars-projects-7ec7e5cd.vercel.app', 'another-domain.com', 'localhost']
+
 
 
 
