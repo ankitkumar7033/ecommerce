@@ -1,5 +1,8 @@
 import os
 import dj_database_url
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -7,7 +10,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
-SECRET_KEY = '#vw(03o=(9kbvg!&2d5i!2$_58x@_-3l4wujpow6(ym37jxnza'
+SECRET_KEY = os.getenv('SECRET_KEY', '#vw(03o=(9kbvg!&2d5i!2$_58x@_-3l4wujpow6(ym37jxnza')
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = ['*']
 
@@ -101,6 +104,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'from@gmail.com'  # Replace with your email
-EMAIL_HOST_PASSWORD = 'xyz'          # Replace with your password
-EMAIL_RECEIVING_USER = ['to@gmail.com']  # Replace with the recipient email
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # Load from environment variable
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # Load from environment variable
+EMAIL_RECEIVING_USER = ['your-receiving-email@gmail.com']  # Replace with the recipient email
