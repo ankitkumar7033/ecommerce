@@ -15,7 +15,6 @@ staticfiles/
 
 # Ignore secret keys and environment variables
 .env
-*.json
 
 # Ignore VS Code and JetBrains IDE settings
 .vscode/
