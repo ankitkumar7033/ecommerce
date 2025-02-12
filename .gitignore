@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Django specific
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Ignore secret keys and environment variables
+.env
+*.json
+
+# Ignore VS Code and JetBrains IDE settings
+.vscode/
+.idea/
+
+# Ignore compiled and cache files
+*.pyc
+*.pyo
+
+# Ignore migrations cache
+**/migrations/__pycache__/
+
+# Ignore deployment files
+*.pid
