@@ -1,0 +1,13 @@
+prefix=E:/ecommerce/test/Library
+exec_prefix=E:/ecommerce/test/Library
+libdir=E:/ecommerce/test/Library/lib
+sharedlibdir=E:/ecommerce/test/Library/lib
+includedir=E:/ecommerce/test/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

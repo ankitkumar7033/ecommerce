@@ -12,9 +12,7 @@ from django.shortcuts import redirect
 
 def logout_view(request):
     logout(request)
-    # Optionally, redirect to a specific page after logout
-    next_url = request.POST.get('next') or '/'  # Redirect to home if no 'next' parameter
-    return redirect(next_url) 
+    return redirect('/')
 
 def home_view(request):
     products=models.Product.objects.all()
